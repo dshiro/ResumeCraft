@@ -28,3 +28,9 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Custom
+/src/assets/resume.json
+/src/assets/password.json
+/public/resume.pdf
+/public/resume.html

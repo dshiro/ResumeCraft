@@ -4,7 +4,11 @@ export default {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'fira-mono': ['"Fira Mono"', 'monospace'],
+      },
+    },
   },
   plugins: [],
 }

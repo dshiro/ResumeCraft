@@ -1,4 +1,5 @@
 import '@/assets/main.css'
+import '@fontsource/fira-mono'
 
 import { createApp } from 'vue'
 // import { createPinia } from 'pinia'

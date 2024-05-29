@@ -11,10 +11,14 @@
     "type-check": "vue-tsc --build --force",
     "init": "resumed init",
     "render": "node render.js",
-    "export": "node export.js"
+    "export": "node export.js",
+    "build-full": "npm run render && npm run export && npm run build"
   },
   "dependencies": {
+    "@fontsource/fira-mono": "^5.0.13",
     "jsonresume-theme-even": "^0.22.0",
+    "jsonresume-theme-mantra": "^0.3.1",
+    "jsonresume-theme-stackoverflow": "^2.0.2",
     "pinia": "^2.1.7",
     "puppeteer": "^13.0.0",
     "resumed": "^3.0.1",
