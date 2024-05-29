@@ -2,9 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  /* @apply bg-zinc-900;
+    @apply text-white; */
+  @apply font-fira-mono;
+}
 
-body {
-    @apply bg-zinc-900;
-    @apply text-white;
-    @apply font-fira-mono;
+html.dark {
+  @apply bg-zinc-900;
+  @apply text-white;
+  @apply font-fira-mono;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

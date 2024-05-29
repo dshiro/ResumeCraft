@@ -2,19 +2,24 @@
 import { RouterView } from "vue-router";
 import { ref } from "vue";
 
-import PasswordPane from '@/components/PasswordPane.vue'
-import resumeData from '@/assets/resume.json';
-import passwordData from '@/assets/password.json';
+import ThemeToggle from "@/components/ThemeToggle.vue";
+import PasswordPane from "@/components/PasswordPane.vue";
+import passwordData from "@/assets/password.json";
 
-const data = resumeData;
 const isAuthenticating = ref(true);
 </script>
 
 <template>
-  <div class="container mx-auto px-2 flex justify-center h-screen">
+  <div class="fixed right-4 bottom-1">
+    <ThemeToggle />
+  </div>
+
+  <div class="flex justify-center h-screen">
     <div class="compatible-container">
-      <div v-if="isAuthenticating" class="auth-container">
-        <PasswordPane :passwords="passwordData.passwords" @validated="isAuthenticating = false" />
+      <div v-if="isAuthenticating" class="auth-container px-2">
+        <PasswordPane
+          :passwords="passwordData.passwords"
+          @validated="isAuthenticating = false" />
       </div>
 
       <div v-else class="resume-container">
@@ -23,7 +28,7 @@ const isAuthenticating = ref(true);
     </div>
 
     <div
-      class="incompatible-container hidden text-center self-center text-[2rem]">
+      class="incompatible-container hidden text-center self-center text-[2rem] px-2">
       Screen size must more than 320px to view this content
     </div>
   </div>

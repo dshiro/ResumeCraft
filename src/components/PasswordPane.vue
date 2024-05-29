@@ -1,43 +1,42 @@
 <template>
-    <div
-        class="mt-5 w-0 overflow-hidden whitespace-nowrap text-[1.6rem] border-r-[.10em] typing-text">
-        Please enter password
-    </div>
-    <!-- 
-        <div class="w-0 overflow-hidden whitespace-nowrap border-r-[.10em] typing-text-desc">
-            (your company new reg num)
-        </div> 
-    -->
+  <div
+    class="mt-5 w-0 overflow-hidden whitespace-nowrap text-[1.6rem] border-r-[.10em] typing-text">
+    Please enter password
+  </div>
+  <!-- 
+      <div class="w-0 overflow-hidden whitespace-nowrap border-r-[.10em] typing-text-desc">
+          (your company new reg num)
+      </div> 
+  -->
 
-    <div
-        class="invisible overflow-hidden whitespace-nowrap password-text">
-        >
-        <span :class="password == 'INVALID' ? 'text-red-500' : ''">
-        {{ password }}
-        </span>
-    </div>
+  <div class="invisible overflow-hidden whitespace-nowrap password-text">
+    >
+    <span :class="password == 'INVALID' ? 'text-red-500' : ''">
+      {{ password }}
+    </span>
+  </div>
 
+  <div
+    class="invisible grid grid-cols-3 mt-5 text-center text-[1.6rem] border rounded password-panel">
     <div
-        class="invisible grid grid-cols-3 mt-5 text-center text-[1.6rem] border rounded password-panel">
-        <div
-        v-for="pane in panes"
-        class="p-5 border cursor-pointer bg-zinc-800 hover:bg-gray-200 hover:text-black select-none"
-        @click="clickPanel(pane)">
-        {{ pane }}
-        </div>
+      v-for="pane in panes"
+      class="p-5 border cursor-pointer bg-gray-50 hover:bg-gray-200 dark:bg-zinc-800 dark:hover:bg-gray-200 dark:hover:text-black select-none"
+      @click="clickPanel(pane)">
+      {{ pane }}
     </div>
+  </div>
 </template>
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
 
-const props = defineProps({ 
-    passwords: {
-        type: Array,
-        required: true,
-    }
-})
+const props = defineProps({
+  passwords: {
+    type: Array,
+    required: true,
+  },
+});
 
-const emit = defineEmits(['validated'])
+const emit = defineEmits(["validated"]);
 const panes = computed(() => {
   let tpanes = [];
   for (let i = 1; i <= 9; i++) {
@@ -77,7 +76,7 @@ const clickPanel = (pane: string | number) => {
 };
 
 const validatePassword = (pw: string, initial: boolean) => {
-  const matchedPassword = props.passwords.find(password => password == pw);
+  const matchedPassword = props.passwords.find((password) => password == pw);
   if (matchedPassword) {
     localStorage.setItem("rscpw", pw);
     // isAuthenticating.value = false;
