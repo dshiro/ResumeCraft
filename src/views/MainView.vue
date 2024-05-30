@@ -22,13 +22,15 @@ const data = resumeData;
     </div>
     <div
       class="mt-4 space-y-5 sm:mt-0 lg:col-span-2 lg:overflow-y-auto lg:h-screen">
-      <AwardsCard
-        v-if="data.awards && data.awards.length > 0"
-        :data="data.awards" />
+      <WorkCard v-if="data.work && data.work.length > 0" :data="data.work" />
 
       <EducationCard
         v-if="data.education && data.education.length > 0"
         :data="data.education" />
+
+      <AwardsCard
+        v-if="data.awards && data.awards.length > 0"
+        :data="data.awards" />
 
       <InterestsCard
         v-if="data.interests && data.interests.length > 0"
@@ -57,8 +59,6 @@ const data = resumeData;
       <ProjectsCard
         v-if="data.projects && data.projects.length > 0"
         :data="data.projects" />
-
-      <WorkCard v-if="data.work && data.work.length > 0" :data="data.work" />
     </div>
   </div>
 </template>
@@ -69,6 +69,7 @@ const data = resumeData;
   @apply p-2;
   @apply rounded-md;
   @apply border;
+  @apply break-words;
 
   @apply bg-gray-100;
   @apply text-gray-800;
