@@ -2,6 +2,7 @@
 
 ## Description
 
+This repository serves as my personal portfolio, although you're welcome to clone it if you'd like.
 Resume managing tool that use [JSONResume Schema](https://jsonresume.org/schema) as data structure, integrates with [resumed](https://github.com/rbardini/resumed) for PDF creation, and offers an editable Vue3 + TypeScript + Tailwind CSS template all based on the same JSON file.
 
 ## Getting Started
