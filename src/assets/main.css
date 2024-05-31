@@ -14,6 +14,14 @@ html.dark {
   @apply font-fira-mono;
 }
 
+hr {
+  @apply border-black;
+}
+
+html.dark hr {
+  @apply border-white;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }

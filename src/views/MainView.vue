@@ -28,17 +28,25 @@ const data = resumeData;
         v-if="data.education && data.education.length > 0"
         :data="data.education" />
 
-      <AwardsCard
-        v-if="data.awards && data.awards.length > 0"
-        :data="data.awards" />
+      <SkillsCard
+        v-if="data.skills && data.skills.length > 0"
+        :data="data.skills" />
+
+      <LanguagesCard
+        v-if="data.languages && data.languages.length > 0"
+        :data="data.languages" />
 
       <InterestsCard
         v-if="data.interests && data.interests.length > 0"
         :data="data.interests" />
 
-      <LanguagesCard
-        v-if="data.languages && data.languages.length > 0"
-        :data="data.languages" />
+      <!-- <ProjectsCard
+        v-if="data.projects && data.projects.length > 0"
+        :data="data.projects" />
+
+      <AwardsCard
+        v-if="data.awards && data.awards.length > 0"
+        :data="data.awards" />
 
       <PublicationsCard
         v-if="data.publications && data.publications.length > 0"
@@ -48,17 +56,9 @@ const data = resumeData;
         v-if="data.references && data.references.length > 0"
         :data="data.references" />
 
-      <SkillsCard
-        v-if="data.skills && data.skills.length > 0"
-        :data="data.skills" />
-
       <VolunteerCard
         v-if="data.volunteer && data.volunteer.length > 0"
-        :data="data.volunteer" />
-
-      <ProjectsCard
-        v-if="data.projects && data.projects.length > 0"
-        :data="data.projects" />
+        :data="data.volunteer" /> -->
     </div>
   </div>
 </template>
@@ -71,7 +71,7 @@ const data = resumeData;
   @apply border;
   @apply break-words;
 
-  @apply bg-gray-100;
+  @apply bg-slate-50;
   @apply text-gray-800;
   @apply border-gray-300;
 }
@@ -80,5 +80,16 @@ html.dark .card {
   @apply bg-zinc-800;
   @apply text-gray-200;
   @apply border-gray-600;
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    @apply m-0;
+    @apply p-0;
+    @apply mb-5;
+    @apply rounded-none;
+    @apply py-2;
+    @apply border-none;
+  }
 }
 </style>

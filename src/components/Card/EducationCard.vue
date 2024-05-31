@@ -52,6 +52,14 @@
             {{ formatDate(education.endDate) }}
           </span>
         </div>
+
+        <div
+          class="text-xs my-2 ml-4"
+          v-if="education.courses && education.courses.length > 0">
+          <ul class="list-disc">
+            <li v-for="course in education.courses">{{ course }}</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
